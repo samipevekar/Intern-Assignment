@@ -6,13 +6,11 @@ import Navbar from './components/Navbar';
 
 const App = () => {
   const [inventory, setInventory] = useState(() => {
-    // Retrieve saved inventory from localStorage (if it exists)
     const savedInventory = localStorage.getItem('inventory');
     return savedInventory ? JSON.parse(savedInventory) : [];
   });
 
   useEffect(() => {
-    // Save inventory to localStorage whenever it changes
     localStorage.setItem('inventory', JSON.stringify(inventory));
   }, [inventory]);
 

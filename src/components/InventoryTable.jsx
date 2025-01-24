@@ -7,7 +7,7 @@ import EditItemForm from './EditItemForm';
 const InventoryTable = ({ inventory, setInventory }) => {
   const [editItem, setEditItem] = useState(null);
   const [filter, setFilter] = useState('');
-  const [sortOrder, setSortOrder] = useState(false); // Tracks if the list is sorted
+  const [sortOrder, setSortOrder] = useState(false); 
 
   const handleDelete = (id) => {
     setInventory(inventory.filter((item) => item.id !== id));
@@ -27,15 +27,13 @@ const InventoryTable = ({ inventory, setInventory }) => {
 
   const handleSort = () => {
     if (!sortOrder) {
-      // Sort in ascending order
       const sorted = [...inventory].sort((a, b) => a.quantity - b.quantity);
       setInventory(sorted);
     } else {
-      // Reset to original order (unsorted)
       const originalOrder = [...inventory].sort((a, b) => a.id - b.id);
       setInventory(originalOrder);
     }
-    setSortOrder(!sortOrder); // Toggle sortOrder state
+    setSortOrder(!sortOrder); 
   };
 
   const filteredInventory = inventory.filter((item) =>

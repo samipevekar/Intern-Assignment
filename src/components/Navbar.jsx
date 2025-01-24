@@ -9,11 +9,11 @@ export default function Navbar() {
   });
 
   useEffect(() => {
-    // Apply dark class based on theme state
+   
     document.documentElement.classList.toggle('dark', theme === 'dark');
-    // Save theme to local storage
+    
     localStorage.setItem('theme', theme);
-  }, [theme]); // Run effect whenever theme changes
+  }, [theme]); 
 
 
 
